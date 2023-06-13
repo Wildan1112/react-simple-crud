@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My First Post",
+      "datetime": "May 01, 2022 11:12:35 AM",
+      "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ipsum dolor, necessitatibus maxime fuga impedit."
+    },
+    {
+      "id": 2,
+      "title": "Second Post",
+      "datetime": "May 02, 2022 15:12:35 AM",
+      "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ipsum dolor, necessitatibus maxime fuga impedit."
+    },
+    {
+      "id": 3,
+      "title": "Third Post",
+      "datetime": "July 24, 2022 20:12:35 AM",
+      "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque ipsum dolor, necessitatibus maxime fuga impedit."
+    },
+    {
+      "id": 4,
+      "title": "post baruu edit 6",
+      "datetime": "June 13, 2023 9:03:07 AM",
+      "body": "ini post baru edit lagi 6"
+    },
+    {
+      "id": 5,
+      "title": "MU goblok",
+      "datetime": "June 13, 2023 9:15:37 AM",
+      "body": "MU goblokkk"
+    }
+  ]
+}
