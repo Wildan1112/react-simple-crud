@@ -1,16 +1,14 @@
 import About from "./About";
-import Header from "./Header";
-import Nav from "./Nav";
 import Home from "./Home";
 import NewPost from "./NewPost";
 import PostPage from "./PostPage";
 import Missing from "./Missing";
-import Footer from "./Footer";
 import EditPost from "./EditPost";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import useAxiosFetch from "./hooks/useAxiosFetch";
 import { useStoreActions } from "easy-peasy";
+import Layout from "./Layout";
 
 
 function App() {
@@ -22,22 +20,18 @@ function App() {
   }, [data, setPosts])
 
   return (
-    <div className="App">
-      <Header title="ReactJS Blog" />
-
-      <Nav />
-      <Switch>
-        <Route exact path="/">
-          <Home isLoading={isLoading} fetchError={fetchError} />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home isLoading={isLoading} fetchError={fetchError} />} />
+        <Route path="post">
+          <Route index element={<NewPost />} />
+          <Route path=":id" element={<PostPage />} />
         </Route>
-        <Route exact path="/post" component={NewPost} />
-        <Route path="/edit/:id" component={EditPost} />
-        <Route path="/post/:id" component={PostPage} />
-        <Route path="/about" component={About} />
-        <Route path="*" component={Missing} />
-      </Switch>
-      <Footer />
-    </div>
+        <Route path="/edit/:id" element={<EditPost />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Missing />} />
+      </Route>
+    </Routes>
   );
 }
 

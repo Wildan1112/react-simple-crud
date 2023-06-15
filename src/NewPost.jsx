@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import format from "date-fns/format";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
 const NewPost = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const posts = useStoreState((state) => state.posts)
   const postTitle = useStoreState((state) => state.postTitle)
@@ -21,7 +21,7 @@ const NewPost = () => {
     const newPost = { id, title: postTitle, datetime, body: postBody };
 
     savePost(newPost)
-    history.push('/')
+    navigate('/')
   };
 
 
